@@ -80,9 +80,9 @@ public class LabRequestController {
     @PutMapping("/assign/{id}")
     public TestRequest assignForLabTest(@PathVariable Long id) {
 
-        User tester =userLoggedInService.getLoggedInUser();
+        User tester = userLoggedInService.getLoggedInUser();
 
-      return   testRequestUpdateService.assignForLabTest(id,tester);
+      return testRequestUpdateService.assignForLabTest(id,tester);
     }
 
     @PreAuthorize("hasAnyRole('TESTER')")
@@ -91,7 +91,7 @@ public class LabRequestController {
 
         try {
 
-            User tester=userLoggedInService.getLoggedInUser();
+            User tester = userLoggedInService.getLoggedInUser();
             return testRequestUpdateService.updateLabTest(id,createLabResult,tester);
 
 
